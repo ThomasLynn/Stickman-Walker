@@ -12,21 +12,22 @@ public class ArenaScript : MonoBehaviour
 
     void Start()
     {
+        if (Application.isEditor)
+        {
+            maxSticks = 1;
+        }
         stickList = new List<GameObject>();
-        Instantiate(stickPrefab, Vector2.zero, Quaternion.identity, transform);
+        SpawnSticks();
     }
 
     public void EndEpisodeAndRespawn(GameObject go)
     {
-        print("respawning "+go);
         if (go != null)
         {
             stickList.Remove(go);
             Destroy(go);
         }
         SpawnSticks();
-        //Instantiate(stickPrefab, Vector2.zero, Quaternion.identity, transform);
-        //Destroy(go);
     }
 
     private void SpawnSticks()

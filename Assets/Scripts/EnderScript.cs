@@ -10,7 +10,6 @@ public class EnderScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
         {
-            print("collided");
             parentAgent.EndEpisodeAndRespawn(-1f);
         }
     }

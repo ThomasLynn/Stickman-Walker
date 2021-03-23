@@ -69,7 +69,6 @@ public class StickAgent : Unity.MLAgents.Agent
         //print("steps " + StepCount + " " + MaxStep);
         if (StepCount > MaxStep - 1)
         {
-            print("done");
             EndEpisodeAndRespawn(0.1f);
         }
     }
@@ -79,20 +78,22 @@ public class StickAgent : Unity.MLAgents.Agent
         //print("collecting");
         foreach(Rigidbody2D rb in bodys)
         {
-            //print("rot " + Mathf.Sin(rb.rotation * Mathf.Deg2Rad) + " " + Mathf.Cos(rb.rotation * Mathf.Deg2Rad)+ " " + (rb.position - body.position));
+            //print("rot " + Mathf.Sin(rb.rotation * Mathf.Deg2Rad) + " " + Mathf.Cos(rb.rotation * Mathf.Deg2Rad)+ " " + ((rb.position - body.position)/2.73f));
             sensor.AddObservation(Mathf.Sin(rb.rotation * Mathf.Deg2Rad));
             sensor.AddObservation(Mathf.Cos(rb.rotation * Mathf.Deg2Rad));
             if (rb != body)
             {
-                sensor.AddObservation(rb.position - body.position);
+                sensor.AddObservation((rb.position - body.position)/2.73f);
             }
         }
         foreach (HingeJoint2D hinge in joints)
         {
-            //print("angle " + hinge.jointAngle);
             float middle = (hinge.limits.min + hinge.limits.max) / 2f;
             float normalisedAngle = (hinge.jointAngle - middle) / (hinge.limits.max - middle);
-            sensor.AddObservation(hinge);
+            sensor.AddObservation(normalisedAngle);
+            //print("angle " + normalisedAngle);
+            //print("joint speed " + (hinge.jointSpeed/200f));
+            sensor.AddObservation((hinge.jointSpeed / 200f));
         }
         /*sensor.AddObservation(body.rotation);
         sensor.AddObservation(RescaleValue(body.position.y, 0, 50, true));
@@ -115,10 +116,8 @@ public class StickAgent : Unity.MLAgents.Agent
     {
         joints = new List<HingeJoint2D>();
         bodys = new List<Rigidbody2D>();
-        print("starting");
         foreach (Transform trans in segments)
         {
-            //print("adding");
             joints.Add(trans.GetComponent<HingeJoint2D>());
             bodys.Add(trans.GetComponent<Rigidbody2D>());
         }

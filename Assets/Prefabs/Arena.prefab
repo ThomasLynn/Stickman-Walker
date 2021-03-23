@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stickPrefab: {fileID: 9186374970023646853, guid: aa16ada29e36c3643bd3e35b5b3af992, type: 3}
-  maxSticks: 5
+  maxSticks: 50
