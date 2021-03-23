@@ -34,7 +34,7 @@ public class ArenaScript : MonoBehaviour
     {
         for (int i=stickList.Count;i< maxSticks; i++)
         {
-            GameObject go = Instantiate(stickPrefab, Vector2.zero, Quaternion.identity, transform);
+            GameObject go = Instantiate(stickPrefab, transform.position, Quaternion.identity, transform);
             stickList.Add(go);
         }
     }

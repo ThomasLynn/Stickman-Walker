@@ -22,7 +22,6 @@ public class StickAgent : Unity.MLAgents.Agent
         {
             for (int i = 0; i < actionsOut.ContinuousActions.Array.Length; i++)
             {
-                //actionsOut.DiscreteActions.Array[i] = 1;
                 actionsOut.ContinuousActions.Array[i] = 1.0f;
             }
         }
@@ -30,7 +29,6 @@ public class StickAgent : Unity.MLAgents.Agent
         {
             for (int i = 0; i < actionsOut.ContinuousActions.Array.Length; i++)
             {
-                //actionsOut.DiscreteActions.Array[i] = -1;
                 actionsOut.ContinuousActions.Array[i] = -1f;
             }
         }
@@ -38,7 +36,6 @@ public class StickAgent : Unity.MLAgents.Agent
         {
             for (int i = 0; i < actionsOut.ContinuousActions.Array.Length; i++)
             {
-                //actionsOut.DiscreteActions.Array[i] = 0;
                 actionsOut.ContinuousActions.Array[i] = 0f;
             }
         }
@@ -81,9 +78,22 @@ public class StickAgent : Unity.MLAgents.Agent
             //print("rot " + Mathf.Sin(rb.rotation * Mathf.Deg2Rad) + " " + Mathf.Cos(rb.rotation * Mathf.Deg2Rad)+ " " + ((rb.position - body.position)/2.73f));
             sensor.AddObservation(Mathf.Sin(rb.rotation * Mathf.Deg2Rad));
             sensor.AddObservation(Mathf.Cos(rb.rotation * Mathf.Deg2Rad));
+            //print("ang vel " + rb.angularVelocity);
+            sensor.AddObservation(RescaleValue(rb.angularVelocity, 0, 360, true));
+
+            //print("lin vel " + rb.velocity);
+            sensor.AddObservation(RescaleValue(rb.velocity.x, 0, 10, true));
+            sensor.AddObservation(RescaleValue(rb.velocity.y, 0, 10, true));
+
+
+
             if (rb != body)
             {
                 sensor.AddObservation((rb.position - body.position)/2.73f);
+                Vector2 relativeVelocity = rb.velocity - body.velocity;
+                //print("rel lin vel " + relativeVelocity);
+                sensor.AddObservation(RescaleValue(relativeVelocity.x, 0, 8, true));
+                sensor.AddObservation(RescaleValue(relativeVelocity.y, 0, 8, true));
             }
         }
         foreach (HingeJoint2D hinge in joints)
@@ -92,24 +102,14 @@ public class StickAgent : Unity.MLAgents.Agent
             float normalisedAngle = (hinge.jointAngle - middle) / (hinge.limits.max - middle);
             sensor.AddObservation(normalisedAngle);
             //print("angle " + normalisedAngle);
-            //print("joint speed " + (hinge.jointSpeed/200f));
-            sensor.AddObservation((hinge.jointSpeed / 200f));
+            //print("joint speed " + RescaleValue(hinge.jointSpeed, 0, 200, false));
+            sensor.AddObservation(RescaleValue(hinge.jointSpeed, 0, 200, false));
+            //print("reaction " + hinge.reactionForce);
+            sensor.AddObservation(RescaleValue(hinge.reactionForce.x, 0, 100, true));
+            sensor.AddObservation(RescaleValue(hinge.reactionForce.y, 0, 100, true));
+            //print("reaction2 " + hinge.reactionTorque);
+            sensor.AddObservation(RescaleValue(hinge.reactionTorque, 0, 100, true));
         }
-        /*sensor.AddObservation(body.rotation);
-        sensor.AddObservation(RescaleValue(body.position.y, 0, 50, true));
-        sensor.AddObservation(RescaleValue(body.position.y, 0, 5, true));
-
-        //print("speed");
-        Vector3 speed = body.InverseTransformDirection(body.GetComponent<Rigidbody>().velocity) / 10f;
-        sensor.AddObservation(RescaleValue(speed.x, 0, 1, true));
-        sensor.AddObservation(RescaleValue(speed.y, 0, 1, true));
-        sensor.AddObservation(RescaleValue(speed.z, 0, 1, true));
-
-        //print("angularSpeed");
-        Vector3 angularSpeed = body.GetComponent<Rigidbody>().angularVelocity;
-        sensor.AddObservation(RescaleValue(angularSpeed.x, 0, 5, true));
-        sensor.AddObservation(RescaleValue(angularSpeed.y, 0, 5, true));
-        sensor.AddObservation(RescaleValue(angularSpeed.z, 0, 5, true));*/
     }
 
     public override void OnEpisodeBegin()

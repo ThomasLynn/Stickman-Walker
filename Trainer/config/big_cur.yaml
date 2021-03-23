@@ -20,7 +20,7 @@ behaviors:
         max_steps: 4e7
         threaded: true
         summary_freq: 50000
-        #checkpoint_interval: 40000
+        checkpoint_interval: 200000
         keep_checkpoints: 100
 engine_settings:
   width: 640
