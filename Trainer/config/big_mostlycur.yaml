@@ -10,7 +10,10 @@ behaviors:
             num_layers: 3
         reward_signals:
             extrinsic:
+                strength: 0.1
                 gamma: 0.99
+            curiosity:
+                strength: 0.01
         time_horizon: 300
         max_steps: 1e7
         threaded: true

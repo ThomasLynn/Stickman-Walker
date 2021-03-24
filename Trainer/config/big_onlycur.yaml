@@ -8,9 +8,6 @@ behaviors:
         network_settings:
             hidden_units: 500
             num_layers: 3
-#            memory:
-#                memory_size: 128
-#                sequence_length: 8
         reward_signals:
             extrinsic:
                 strength: 0
@@ -18,7 +15,7 @@ behaviors:
             curiosity:
                 strength: 0.01
         time_horizon: 300
-        max_steps: 4e7
+        max_steps: 1e7
         threaded: true
         summary_freq: 50000
         checkpoint_interval: 200000
