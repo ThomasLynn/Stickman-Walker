@@ -8,7 +8,7 @@ public class EnderScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag != "Stick")
         {
             parentAgent.EndEpisodeAndRespawn(-1f);
         }

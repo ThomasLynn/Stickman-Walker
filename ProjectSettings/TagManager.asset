@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Wall
+  - SmallRamp
+  - SmallObstacle
+  - Stick
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Stick
-  - 
+  - Environment
   - 
   - 
   - 
