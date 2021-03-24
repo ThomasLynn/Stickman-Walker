@@ -82,18 +82,18 @@ public class StickAgent : Unity.MLAgents.Agent
             sensor.AddObservation(RescaleValue(rb.angularVelocity, 0, 360, true));
 
             //print("lin vel " + rb.velocity);
-            sensor.AddObservation(RescaleValue(rb.velocity.x, 0, 10, true));
-            sensor.AddObservation(RescaleValue(rb.velocity.y, 0, 10, true));
+            //sensor.AddObservation(RescaleValue(rb.velocity.x, 0, 10, true));
+            //sensor.AddObservation(RescaleValue(rb.velocity.y, 0, 10, true));
 
 
 
             if (rb != body)
             {
                 sensor.AddObservation((rb.position - body.position)/2.73f);
-                Vector2 relativeVelocity = rb.velocity - body.velocity;
+                //Vector2 relativeVelocity = rb.velocity - body.velocity;
                 //print("rel lin vel " + relativeVelocity);
-                sensor.AddObservation(RescaleValue(relativeVelocity.x, 0, 8, true));
-                sensor.AddObservation(RescaleValue(relativeVelocity.y, 0, 8, true));
+                //sensor.AddObservation(RescaleValue(relativeVelocity.x, 0, 8, true));
+                //sensor.AddObservation(RescaleValue(relativeVelocity.y, 0, 8, true));
             }
         }
         foreach (HingeJoint2D hinge in joints)
@@ -105,10 +105,10 @@ public class StickAgent : Unity.MLAgents.Agent
             //print("joint speed " + RescaleValue(hinge.jointSpeed, 0, 200, false));
             sensor.AddObservation(RescaleValue(hinge.jointSpeed, 0, 200, false));
             //print("reaction " + hinge.reactionForce);
-            sensor.AddObservation(RescaleValue(hinge.reactionForce.x, 0, 100, true));
-            sensor.AddObservation(RescaleValue(hinge.reactionForce.y, 0, 100, true));
+            //sensor.AddObservation(RescaleValue(hinge.reactionForce.x, 0, 100, true));
+            //sensor.AddObservation(RescaleValue(hinge.reactionForce.y, 0, 100, true));
             //print("reaction2 " + hinge.reactionTorque);
-            sensor.AddObservation(RescaleValue(hinge.reactionTorque, 0, 100, true));
+            //sensor.AddObservation(RescaleValue(hinge.reactionTorque, 0, 100, true));
         }
     }
 
