@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stickPrefab: {fileID: 9186374970023646853, guid: aa16ada29e36c3643bd3e35b5b3af992, type: 3}
   maxSticks: 50
+  doSpawn: 1
 --- !u!1 &6590732390064774925
 GameObject:
   m_ObjectHideFlags: 0

@@ -173,8 +173,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ff77192be9f76424a815af1f7f3b38ee, type: 3}
+  m_Color: {r: 0.95, g: 0.95, b: 0.95, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: f8e687fbe4fae3c4198812a068d4fe06, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 33c263a31353b0f419db8cd00f585dd3, type: 3}
   m_InferenceDevice: 2
   m_BehaviorType: 0
   m_BehaviorName: Stickman
@@ -442,8 +442,20 @@ PrefabInstance:
       value: Stick
       objectReference: {fileID: 0}
     - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_SortingOrder
-      value: -4
+      value: -6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
@@ -549,8 +561,20 @@ PrefabInstance:
       value: Stick
       objectReference: {fileID: 0}
     - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_SortingOrder
-      value: -4
+      value: -7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
@@ -641,6 +665,18 @@ PrefabInstance:
     - target: {fileID: 1741856442107377608, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_TagString
       value: Stick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_SortingOrder
@@ -744,6 +780,18 @@ PrefabInstance:
     - target: {fileID: 1741856442107377608, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_TagString
       value: Stick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.46117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6313726
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
@@ -854,6 +902,18 @@ PrefabInstance:
       value: Stick
       objectReference: {fileID: 0}
     - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_SortingOrder
       value: -4
       objectReference: {fileID: 0}
@@ -948,8 +1008,20 @@ PrefabInstance:
       value: Stick
       objectReference: {fileID: 0}
     - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
@@ -1050,6 +1122,18 @@ PrefabInstance:
     - target: {fileID: 1741856442107377608, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_TagString
       value: Stick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 5041145715160184656, guid: f4aeab58effbf7949af6b99378e2e24e, type: 3}
       propertyPath: m_SortingOrder

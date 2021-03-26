@@ -16,7 +16,6 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(10, 0);
         foreach (Transform trans in arena)
         {
             if (trans.tag == "Stick")

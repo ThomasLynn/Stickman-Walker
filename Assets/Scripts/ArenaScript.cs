@@ -7,6 +7,7 @@ public class ArenaScript : MonoBehaviour
 
     public GameObject stickPrefab;
     public int maxSticks;
+    public bool doSpawn;
 
     private List<GameObject> stickList;
 
@@ -32,10 +33,12 @@ public class ArenaScript : MonoBehaviour
 
     private void SpawnSticks()
     {
-        for (int i=stickList.Count;i< maxSticks; i++)
-        {
-            GameObject go = Instantiate(stickPrefab, transform.position, Quaternion.identity, transform);
-            stickList.Add(go);
+        if (doSpawn) {
+            for (int i = stickList.Count; i < maxSticks; i++)
+            {
+                GameObject go = Instantiate(stickPrefab, transform.position, Quaternion.identity, transform);
+                stickList.Add(go);
+            }
         }
     }
 }
