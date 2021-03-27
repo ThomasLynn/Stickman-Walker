@@ -18,7 +18,7 @@ public class CameraFollower : MonoBehaviour
     {
         foreach (Transform trans in arena)
         {
-            if (trans.tag == "Stick")
+            if (trans.tag == "Stick" && trans.gameObject.activeSelf)
             {
                 Vector3 newPos = new Vector3(trans.GetComponent<StickAgent>().body.position.x, 0, -10);
                 /*if (newPos.x < startingPos.x)
