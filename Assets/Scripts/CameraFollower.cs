@@ -6,27 +6,21 @@ public class CameraFollower : MonoBehaviour
 {
 
     public Transform arena;
+    public bool doFollow;
 
-    private Vector3 startingPos;
-
-    void Start()
-    {
-        startingPos = transform.position;
-    }
     // Update is called once per frame
     void Update()
     {
-        foreach (Transform trans in arena)
+        if (doFollow)
         {
-            if (trans.tag == "Stick" && trans.gameObject.activeSelf)
+            foreach (Transform trans in arena)
             {
-                Vector3 newPos = new Vector3(trans.GetComponent<StickAgent>().body.position.x, 0, -10);
-                /*if (newPos.x < startingPos.x)
+                if (trans.tag == "Stick" && trans.gameObject.activeSelf)
                 {
-                    newPos.x = startingPos.x;
-                }*/
-                transform.position = newPos;
-                break;
+                    Vector3 newPos = new Vector3(trans.GetComponent<StickAgent>().body.position.x, 0, -10);
+                    transform.position = newPos;
+                    break;
+                }
             }
         }
     }

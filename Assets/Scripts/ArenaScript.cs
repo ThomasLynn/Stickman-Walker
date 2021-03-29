@@ -7,6 +7,7 @@ public class ArenaScript : MonoBehaviour
 
     public GameObject stickPrefab;
     public int maxSticks;
+    public int maxSticksEditor;
     public bool doSpawn;
 
     private List<GameObject> stickList;
@@ -15,7 +16,7 @@ public class ArenaScript : MonoBehaviour
     {
         if (Application.isEditor)
         {
-            maxSticks = 1;
+            maxSticks = maxSticksEditor;
         }
         stickList = new List<GameObject>();
         SpawnSticks();
