@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &70992542 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5292461931938899259, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
-  m_PrefabInstance: {fileID: 2028056919}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d827410ac58af6408a9e50933d8adf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arena: {fileID: 70992542}
+  arena: {fileID: 1594880579}
   doFollow: 1
 --- !u!20 &519420031
 Camera:
@@ -226,6 +221,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1594880579 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5292461931938899259, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
+  m_PrefabInstance: {fileID: 8524171188386872331}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2028056919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 5022602860645237092, guid: d77e84ffd5532f74dabe4c12eb705914, type: 3}
     - target: {fileID: 5292461931938899259, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5292461931938899259, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,7 +315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142647566852793381, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
       propertyPath: m_Name
-      value: Arena (1)
+      value: Arena Top
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
@@ -329,7 +329,7 @@ PrefabInstance:
     - target: {fileID: 1001791569159525642, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
       propertyPath: stickPrefab
       value: 
-      objectReference: {fileID: 7343419112519047927, guid: 2eccbb715554f11418c93e80cef52350, type: 3}
+      objectReference: {fileID: 7343419112519047927, guid: 632f34f1caa6b404bafe0a701b26d8da, type: 3}
     - target: {fileID: 1001791569159525642, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
       propertyPath: doNetworkSpawn
       value: 1
@@ -364,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 5022602860645237092, guid: d77e84ffd5532f74dabe4c12eb705914, type: 3}
     - target: {fileID: 5292461931938899259, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5292461931938899259, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
       propertyPath: m_LocalPosition.x
@@ -408,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142647566852793381, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
       propertyPath: m_Name
-      value: Arena
+      value: Arena Bottom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d9b1a9f0dfa9004c93acf9f3a9a1820, type: 3}
