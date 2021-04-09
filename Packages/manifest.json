@@ -11,7 +11,6 @@
     "com.unity.ide.visualstudio": "2.0.5",
     "com.unity.ide.vscode": "1.2.3",
     "com.unity.ml-agents": "file:H:/Unity/packages/ml-agents-latest_release_14/ml-agents-latest_release/com.unity.ml-agents",
-    "com.unity.ml-agents.extensions": "file:H:/Unity/packages/ml-agents-latest_release_14/ml-agents-latest_release/com.unity.ml-agents.extensions",
     "com.unity.test-framework": "1.1.20",
     "com.unity.textmeshpro": "3.0.1",
     "com.unity.timeline": "1.4.5",
