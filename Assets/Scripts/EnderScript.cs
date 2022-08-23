@@ -10,7 +10,7 @@ public class EnderScript : MonoBehaviour
     {
         if (collision.gameObject.tag != "Stick")
         {
-            parentAgent.EndEpisodeAndRespawn(-1f);
+            parentAgent.EndEpisodeAndRespawn(-0.1f);
         }
     }
 }

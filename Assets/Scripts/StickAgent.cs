@@ -45,8 +45,7 @@ public class StickAgent : Unity.MLAgents.Agent
     {
 
         float newDistance = GetDistance();
-        //print("reward " + (newDistance - distance));
-        AddReward((newDistance - distance)*0.1f);
+        AddReward((newDistance - distance)*0.05f);
         distance = newDistance;
 
         for(int i= 0;i<joints.Count;i++)
@@ -54,19 +53,16 @@ public class StickAgent : Unity.MLAgents.Agent
             HingeJoint2D hinge = joints[i];
             float middle = (hinge.limits.min + hinge.limits.max) / 2f;
             float normalisedAngle = (hinge.jointAngle - middle) / (hinge.limits.max - middle);
-            //float difference = Mathf.Clamp(actionBuffers.ContinuousActions[i], -1, 1) - normalisedAngle;
             float difference = actionBuffers.ContinuousActions[i] - normalisedAngle;
-            //print("normalised angle " + normalisedAngle);
 
             JointMotor2D motor = hinge.motor;
             motor.motorSpeed = Mathf.Clamp(difference * 1000f,-200,200);
             hinge.motor = motor;
         }
 
-        //print("steps " + StepCount + " " + MaxStep);
         if (StepCount > MaxStep - 1)
         {
-            EndEpisodeAndRespawn(0.1f);
+            EndEpisodeAndRespawn(0f);
         }
     }
 
@@ -75,13 +71,11 @@ public class StickAgent : Unity.MLAgents.Agent
         //print("collecting");
         foreach(Rigidbody2D rb in bodys)
         {
-            //print("rot " + Mathf.Sin(rb.rotation * Mathf.Deg2Rad) + " " + Mathf.Cos(rb.rotation * Mathf.Deg2Rad)+ " " + ((rb.position - body.position)/2.73f));
             sensor.AddObservation(Mathf.Sin(rb.rotation * Mathf.Deg2Rad));
             sensor.AddObservation(Mathf.Cos(rb.rotation * Mathf.Deg2Rad));
-            //print("ang vel " + rb.angularVelocity);
+
             sensor.AddObservation(RescaleValue(rb.angularVelocity, 0, 360, true));
 
-            //print("lin vel " + rb.velocity);
             //sensor.AddObservation(RescaleValue(rb.velocity.x, 0, 10, true));
             //sensor.AddObservation(RescaleValue(rb.velocity.y, 0, 10, true));
 
@@ -91,7 +85,6 @@ public class StickAgent : Unity.MLAgents.Agent
             {
                 sensor.AddObservation((rb.position - body.position)/2.73f);
                 //Vector2 relativeVelocity = rb.velocity - body.velocity;
-                //print("rel lin vel " + relativeVelocity);
                 //sensor.AddObservation(RescaleValue(relativeVelocity.x, 0, 8, true));
                 //sensor.AddObservation(RescaleValue(relativeVelocity.y, 0, 8, true));
             }
@@ -101,14 +94,7 @@ public class StickAgent : Unity.MLAgents.Agent
             float middle = (hinge.limits.min + hinge.limits.max) / 2f;
             float normalisedAngle = (hinge.jointAngle - middle) / (hinge.limits.max - middle);
             sensor.AddObservation(normalisedAngle);
-            //print("angle " + normalisedAngle);
-            //print("joint speed " + RescaleValue(hinge.jointSpeed, 0, 200, false));
             sensor.AddObservation(RescaleValue(hinge.jointSpeed, 0, 200, false));
-            //print("reaction " + hinge.reactionForce);
-            //sensor.AddObservation(RescaleValue(hinge.reactionForce.x, 0, 100, true));
-            //sensor.AddObservation(RescaleValue(hinge.reactionForce.y, 0, 100, true));
-            //print("reaction2 " + hinge.reactionTorque);
-            //sensor.AddObservation(RescaleValue(hinge.reactionTorque, 0, 100, true));
         }
     }
 

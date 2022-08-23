@@ -1,0 +1,24 @@
+behaviors:
+    Stickman:
+        trainer_type: ppo
+        hyperparameters:
+            batch_size: 5000
+            buffer_size: 50000
+            num_epoch: 4
+        network_settings:
+            hidden_units: 500
+            num_layers: 3
+        reward_signals:
+            extrinsic:
+                strength: 1.0
+            curiosity:
+                strength: 0.02
+        time_horizon: 64
+        max_steps: 1e7
+        threaded: true
+        summary_freq: 50000
+        checkpoint_interval: 200000
+        keep_checkpoints: 100
+engine_settings:
+  width: 640
+  height: 360

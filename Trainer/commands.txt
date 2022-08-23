@@ -1,3 +1,3 @@
 mlagents-learn config/configuration.yaml --run-id ppo --env "..\Standalone\name.exe" --num-env 6 --no-graphics
 
-mlagents-learn config/configuration.yaml --run-id ppo
+mlagents-learn config/configuration.yaml --run-id ppo2
